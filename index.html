@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get in touch with the Meridian team." />
+    <title>Meridian — Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="info">
+        <p class="eyebrow">Contact</p>
+        <h1>Let's start a<br />conversation.</h1>
+        <p class="intro">
+          Tell us about your project. We usually reply within one business day.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="icon" aria-hidden="true">✉</span>
+            <div>
+              <span class="label">Email</span>
+              <a href="mailto:hello@meridian.studio">hello@meridian.studio</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">☎</span>
+            <div>
+              <span class="label">Phone</span>
+              <a href="tel:+15551234567">+1 (555) 123-4567</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">◈</span>
+            <div>
+              <span class="label">Studio</span>
+              <span>221 Harbor Lane, Suite 400<br />Portland, OR 97209</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="hours">
+          <span class="dot" aria-hidden="true"></span>
+          Mon–Fri · 9am–6pm PT
+        </div>
+      </section>
+
+      <section class="form-card">
+        <form id="contact-form" novalidate>
+          <div class="row">
+            <div class="field" data-field="name">
+              <label for="name">Full name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                placeholder="Jane Doe"
+                aria-describedby="name-error"
+                required
+              />
+              <p class="error" id="name-error" role="alert"></p>
+            </div>
+
+            <div class="field" data-field="email">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="jane@company.com"
+                aria-describedby="email-error"
+                required
+              />
+              <p class="error" id="email-error" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="field" data-field="subject">
+            <label for="subject">Subject</label>
+            <div class="select-wrap">
+              <select id="subject" name="subject" aria-describedby="subject-error" required>
+                <option value="">Choose a topic…</option>
+                <option value="project">New project</option>
+                <option value="support">Support</option>
+                <option value="partnership">Partnership</option>
+                <option value="careers">Careers</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <p class="error" id="subject-error" role="alert"></p>
+          </div>
+
+          <div class="field" data-field="message">
+            <div class="label-row">
+              <label for="message">Message</label>
+              <span class="counter"><span id="count">0</span>/1000</span>
+            </div>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="1000"
+              placeholder="A few details about what you have in mind…"
+              aria-describedby="message-error"
+              required
+            ></textarea>
+            <p class="error" id="message-error" role="alert"></p>
+          </div>
+
+          <button type="submit" class="submit" id="submit-btn">
+            <span class="btn-label">Send message</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <div class="success" id="success" role="status" hidden>
+          <div class="check" aria-hidden="true">✓</div>
+          <h2>Message sent</h2>
+          <p>Thanks for reaching out — we'll be in touch shortly.</p>
+          <button type="button" class="again" id="again">Send another</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
